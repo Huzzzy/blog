@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Добавление категорий</h1>
+                        <h1 class="m-0">Добавление тегов</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -29,7 +29,7 @@
                         <form action="{{ route('admin.tag.store') }}" method="POST" class="col-4">
                             @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" name="title" placeholder="Название категории">
+                                <input type="text" class="form-control" name="title" placeholder="Название тегов">
                                 @error('title')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
