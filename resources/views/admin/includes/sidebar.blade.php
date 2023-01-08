@@ -8,7 +8,6 @@
                    with font-awesome or any other icon font library -->
                 <li class="nav-item menu-open">
                     <ul class="nav nav-treeview">
-
                         <li class="nav-item">
                             <a href="{{ route('admin.category.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-th-list"></i>
@@ -17,7 +16,16 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.tag.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-tags"></i>
+                                <p>
+                                    Теги
+                                </p>
+                            </a>
+                        </li>
                     </ul>
+                </li>
         </nav>
     </div>
 
