@@ -11,6 +11,13 @@
                         <a href="{{ route('admin.category.edit', $category->id) }}" class="text-success">
                             <i class="fas fa-pencil-alt"></i>
                         </a>
+                        <form action="{{ route('admin.category.delete', $category->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="border-0 bg-transparent">
+                                <i class="fas fa-trash text-danger"></i>
+                            </button>
+                        </form>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
