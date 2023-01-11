@@ -37,10 +37,10 @@
                             </div>
                             <div class="form-group w-75">
                                 <textarea id="summernote" name="content">{{ old('content') }}</textarea>
+                                @error('content')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
-                            @error('content')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
                             <div class="form-group w-50">
                                 <label for="exampleInputFile">Добавить превью</label>
                                 <div class="input-group">
@@ -52,6 +52,9 @@
                                         <span class="input-group-text">Загрузка</span>
                                     </div>
                                 </div>
+                                @error('preview_image')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group w-50">
                                 <label for="exampleInputFile">Добавить главное изображение</label>
@@ -64,6 +67,22 @@
                                         <span class="input-group-text">Загрузка</span>
                                     </div>
                                 </div>
+                                @error('main_image')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group w-50">
+                                <label>Выберите категорию</label>
+                                <select name="category_id" class="form-control">
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}"
+                                            {{ $category->id == old('category_id') ? 'selected' : '' }}>
+                                            {{ $category->title }}</option>
+                                    @endforeach
+                                </select>
+                                @error('category_id')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" value="Добавить">
