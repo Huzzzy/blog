@@ -207,5 +207,7 @@ return [
         'updated_at'               => 'обновлено в',
         'username'                 => 'никнейм',
         'year'                     => 'год',
+        'preview_image'            => 'превью',
+        'main_image'               => 'главное изображение',
     ],
 ];
