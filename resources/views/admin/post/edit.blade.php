@@ -32,13 +32,13 @@
                             @method('PATCH')
                             <div class="form-group w-25">
                                 <input type="text" class="form-control" name="title" placeholder="Название поста"
-                                    value="{{ $post->title }}">
+                                    value="{{ old('title', $post->title) }}">
                                 @error('title')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group w-75">
-                                <textarea id="summernote" name="content">{{ $post->content }}</textarea>
+                                <textarea id="summernote" name="content">{{ old('content', $post->content) }}</textarea>
                                 @error('content')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -86,7 +86,7 @@
                                 <select name="category_id" class="form-control">
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}"
-                                            {{ $category->id == $post->category_id ? 'selected' : '' }}>
+                                            {{ old('category_id', $category->id) == $post->category_id ? 'selected' : '' }}>
                                             {{ $category->title }}</option>
                                     @endforeach
                                 </select>
@@ -100,7 +100,9 @@
                                     data-placeholder="Выберите теги" style="width: 100%;">
                                     @foreach ($tags as $tag)
                                         <option value="{{ $tag->id }}"
-                                            {{ is_array($post->tags->pluck('id')->toArray()) && in_array($tag->id, $post->tags->pluck('id')->toArray()) ? 'selected' : '' }}>
+                                            {{ is_array($post->tags->pluck('id')->toArray()) && in_array($tag->id, $post->tags->pluck('id')->toArray())
+                                                ? 'selected'
+                                                : '' }}>
                                             {{ $tag->title }}</option>
                                     @endforeach
                                 </select>
