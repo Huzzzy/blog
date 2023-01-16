@@ -64,18 +64,18 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="{{ route('login') }}" class="btn btn-outline-dark">
+                                Login
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
                         <li class="nav-link">
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
                                 <input type="submit" class="btn btn-outline-dark" value="Logout">
                             </form>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="{{ route('login') }}" class="btn btn-outline-dark">
-                                Login
-                            </a>
                         </li>
                     </ul>
                 </div>
