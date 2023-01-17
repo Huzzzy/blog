@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers\Personal\Comment;
 
-use App\Models\Tag;
-use App\Models\Post;
 use App\Models\User;
-use App\Models\Category;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class IndexController extends Controller
+class EditController extends Controller
 {
-    public function __invoke()
+    public function __invoke(Comment $comment)
     {
         $comments = auth()->user()->comments;
-        return view('personal.comment.index');
+        return view('personal.comment.edit', compact('comment'));
     }
 }
