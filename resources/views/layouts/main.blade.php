@@ -31,6 +31,9 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="{{ route('main.index') }}">Блог</a>
                         </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ route('category.index') }}">Категории</a>
+                        </li>
                     </ul>
                     @guest
                         <ul class="navbar-nav">
